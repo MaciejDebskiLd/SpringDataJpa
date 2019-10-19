@@ -20,7 +20,6 @@ public class FirstspringdatajpaApplication implements CommandLineRunner {
 
 	}
 
-
 	@Override
 	public void run(String... args) {
 		bookRepository.save(new Book("Java"));
@@ -31,10 +30,17 @@ public class FirstspringdatajpaApplication implements CommandLineRunner {
 		bookRepository.findAll().forEach(x -> System.out.println(x));
 
 		System.out.println("\nfindById(1L)");
-		bookRepository.findById(1l).ifPresent(x -> System.out.println(x));
+		bookRepository.findById(1L).ifPresent(x -> System.out.println(x));
 
 		System.out.println("\nfindByName('Java')");
 		bookRepository.findByTitle("Pan Kleks").forEach(x -> System.out.println(x));
+
+		System.out.println("\ndeleteById(3L)");
+		bookRepository.deleteById(3L);
+		System.out.println("\nfindAll()");
+		bookRepository.findAll().forEach(x -> System.out.println(x));
+
+
 
 	}
 }
