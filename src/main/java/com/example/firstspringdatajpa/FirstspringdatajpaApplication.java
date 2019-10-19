@@ -33,8 +33,8 @@ public class FirstspringdatajpaApplication implements CommandLineRunner {
 		System.out.println("\nfindById(1L)");
 		bookRepository.findById(1l).ifPresent(x -> System.out.println(x));
 
-//		System.out.println("\nfindByName('Java')");
-//		bookRepository.findByName("Pan Kleks").forEach(x -> System.out.println(x));
+		System.out.println("\nfindByName('Java')");
+		bookRepository.findByTitle("Pan Kleks").forEach(x -> System.out.println(x));
 
 	}
 }
